@@ -1,0 +1,82 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white row">
+    <div class="navbar-brand text-secondary col-xs-3" style="font-size: 1.4rem"><strong>Dojo Activity Center</strong></div>
+
+    <div class="col-xs-2 offset-1">
+        <p>Welcome @ViewBag.User.FirstName</p>
+    </div>
+
+    <div class="col-xs-2 offset-1">
+        <a href="/logout">Logout</a>
+    </div>
+</nav>
+
+@if(false)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Activity</th>
+                <th scope="col">Date and Time</th>
+                <th scope="col">Duration</th>
+                <th scope="col">Event Coordinator</th>
+                <th scope="col">Number of Participants</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+            @foreach (var event in ViewBag.allEvents)
+            {
+                <tr>
+                    <th scope ="row">@event.Title</th>
+                    <td>@event.Date at @event.Time</td>
+                    <td>@event.Duration @event.DurationUnits</td>
+                    <td>@event.Coordinator.FirstName @event.Coordinator.LastName</td>
+                    <td>@event.AttendeeCount</td>
+
+                    @if (event.Coordinator.UserId == ViewBag.User.UserId)
+                    {
+                        <td><a href=$"event/{@event.EventId}/delete">Delete</a></td>
+                    }
+                    else
+                    {
+                        @if(ViewBag.allUserRSVPs.Contains(event))
+                        {
+                            <td><a href=$"event/{@event.EventId}/leave">Leave</a></td>
+                        }
+                        else 
+                        {
+                            <td><a href=$"event/{@event.EventId}/join">Join</a></td>
+                        }
+                    }
+                </tr>
+            }
+    </table>
+}
+
+
+
+
+
+
+<div class="float-right"><a href="/new" class="btn btn-warning">Add a new Activity!</a></div>
+
+
+
+
+
+            @if (e.Coordinator.UserId == ViewBag.User.UserId)
+                {
+                    <td><a href="event/@e.EventId/delete">Delete</a></td>
+                }
+                else
+                {
+                    @if(ViewBag.allUserRSVPs.Contains(e))
+                    {
+                        <td><a href="event/@e.EventId/leave">Leave</a></td>
+                    }
+                    else 
+                    {
+                        <td><a href="event/@e.EventId/join">Join</a></td>
+                    }
+                }
+            </tr>

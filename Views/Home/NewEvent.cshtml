@@ -1,0 +1,57 @@
+@model Event
+
+<div class="jumbotron text-center bg-dark text-warning">
+    <h1 class="display-4">Create an Activity!</h1>
+</div>
+
+<div class="col-6 mx-auto">
+
+    <form asp-action="CreateEvent" asp-controller="Home" method="POST">
+        <div class="form-group">
+            <span asp-validation-for="Title" class="text-danger"></span><br>
+            <label asp-for="Title"></label>
+            <input asp-for="Title" class="form-control form-control-lg">
+        </div>
+        <div class="form-group">
+            <span asp-validation-for="Date" class="text-danger"></span><br>
+            <label asp-for="Date"></label>
+            <input asp-for="Date" class="form-control form-control-lg">
+        </div>
+        <div class="form-group">
+            <span asp-validation-for="Time" class="text-danger"></span><br>
+            <label asp-for="Time"></label>
+            <input asp-for="Time" class="form-control form-control-lg">
+        </div>
+
+
+
+
+
+        <div class="form-group">
+            <span asp-validation-for="Duration" class="text-danger"></span><br>
+            <label asp-for="Duration"></label>
+            <input asp-for="Duration" class="form-control form-control-lg">
+        </div>
+
+        <div class="form-group">
+            <span asp-validation-for="DurationUnits" class="text-danger"></span><br>
+            <label asp-for="DurationUnits"></label>
+            <select asp-for="DurationUnits">
+                <option value="D">Day(s)</option>
+                <option value="H">Hour(s)</option>
+                <option value="M">Minute(s)</option>
+            </select>
+        </div>
+
+
+
+        <div class="form-group">
+            <span asp-validation-for="Description" class="text-danger"></span><br>
+            <label asp-for="Description"></label>
+            <textarea asp-for="Description" class="form-control form-control-lg" rows="5"></textarea>
+        </div>
+
+        <div class="text-center"><input type="submit" value="Create Activity" class="btn btn-warning w-75" style="font-size:1.5rem"></div>
+    </form>
+
+</div>

@@ -1,0 +1,84 @@
+@model Event;
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white row">
+    <div class="navbar-brand text-secondary col-xs-3" style="font-size: 1.4rem"><strong>Dojo Activity Center</strong></div>
+
+    <div class="col-xs-2 offset-1">
+        <a href="/home">Home</a>
+    </div>
+
+    <div class="col-xs-2 offset-1">
+        <a href="/logout">Logout</a>
+    </div>
+</nav>
+
+
+<div class="jumbotron text-center">
+    <h1 class="display-4">@Model.Title</h1>
+
+    @if (Model.UserId == ViewBag.thisUser.UserId)
+    {
+        <a href="/event/@Model.EventId/delete" class="btn btn-danger">Delete</a>
+    }
+    else
+    {
+        bool isJoining = false;
+        @foreach (var rsvp in Model.Attendees)
+        {
+            @if (rsvp.UserId == ViewBag.thisUser.UserId)
+            {
+                isJoining = true;
+            }
+        }
+        @if (isJoining)
+        {
+            <a href="/event/@Model.EventId/leave" class="btn btn-danger">Leave</a>
+
+        }
+        else
+        {
+            <a href="/event/@Model.EventId/join" class="btn btn-success">Join</a>
+        }
+    }
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="col-8 mx-auto">
+
+    <h1>Event Coordinator: <span class="text-primary">@ViewBag.Coordinator.FirstName @ViewBag.Coordinator.LastName</span></h1><br>
+
+    <h1>Description:</h1>
+    <p class="ml-3">@Model.Description</p>
+
+    <h1>Participants:</h1>
+    <ul>
+    @if (Model.AttendeeCount == 0){
+        <li class="list-group-item">No users have RSVPed yet!</li>
+    } else{
+        @foreach (RSVP rsvp in Model.Attendees){
+            @if (rsvp.User.UserId == ViewBag.Coordinator.UserId){
+                continue;
+            } 
+            else
+            {
+                <li class="list-group-item">@rsvp.User.FirstName @rsvp.User.LastName</li>
+            }
+        }
+    }
+    </ul>
+    
+</div>
+
+
+
+
+
+

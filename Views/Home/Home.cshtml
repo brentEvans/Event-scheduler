@@ -1,0 +1,70 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white row">
+    <div class="navbar-brand text-secondary col-xs-3" style="font-size: 1.4rem"><strong>Dojo Activity Center</strong></div>
+
+    <div class="col-xs-2 offset-1">
+        <p>Welcome @ViewBag.User.FirstName</p>
+    </div>
+
+    <div class="col-xs-2 offset-1">
+        <a href="/logout">Logout</a>
+    </div>
+</nav>
+
+
+
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Activity</th>
+            <th scope="col">Date and Time</th>
+            <th scope="col">Duration</th>
+            <th scope="col">Event Coordinator</th>
+            <th scope="col">Number of Participants</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+        @foreach (var e in ViewBag.allEvents)
+        {
+            DateTime now = DateTime.Now;
+
+            if (e.Date.CompareTo(now) < 0){
+                continue;
+            }
+            <tr>
+                <th scope ="row"><a href="/Event/@e.EventId">@e.Title</a></th>
+                <td>@e.Date at @e.Time</td>
+                <td>@e.Duration @e.DurationUnits</td>
+                <td>@e.Coordinator.FirstName @e.Coordinator.LastName</td>
+                <td>@e.AttendeeCount</td>
+
+                @if (e.Coordinator.UserId == ViewBag.User.UserId)
+                {
+                    <td><a href="event/@e.EventId/delete">Delete</a></td>
+                }
+                else
+                {
+                    @if(!ViewBag.allUserEvents.Contains(e))
+                    {
+                        <td><a href="event/@e.EventId/join">Join</a></td>
+                    }
+                    else 
+                    {
+                        <td><a href="event/@e.EventId/leave">Leave</a></td>
+                    }
+                }
+            </tr>
+        }
+</table>
+
+
+
+
+
+
+<div class="float-right"><a href="/new" class="btn btn-warning">Add a new Activity!</a></div>
+
+
