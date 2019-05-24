@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
+<head> 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BeltExam</title>
@@ -14,11 +14,22 @@
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.css" />
+        <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Crimson+Text|Francois+One&display=swap" rel="stylesheet">       
     </environment>
 </head>
 <body>
-    <div class="container body-content">
-        @RenderBody()
+    <div class="Menu navbar Crimson-text">
+        <div class="Logo">Activity Center</div>
+        <div class="dropdown">
+            <button class="dropbtn">Menu &#x25BC</button>
+            <div class="dropdown-content">
+                <a href="/home">Home</a>
+                <a href="/logout">Logout!</a>
+            </div>
+        </div>
+    </div>
+    <div class="Container Crimson-text body-content">
+        <div id="Fade">@RenderBody()</div>
     </div>
 
     <environment include="Development">

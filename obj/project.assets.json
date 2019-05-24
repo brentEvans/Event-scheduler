@@ -11581,11 +11581,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/brent/Desktop/Coding/c#_stack/ASP.NET_Core/BeltExam/BeltExam.csproj",
+      "projectUniqueName": "/Users/brent/Desktop/Coding/projects/C#_Belt/BeltExam.csproj",
       "projectName": "BeltExam",
-      "projectPath": "/Users/brent/Desktop/Coding/c#_stack/ASP.NET_Core/BeltExam/BeltExam.csproj",
+      "projectPath": "/Users/brent/Desktop/Coding/projects/C#_Belt/BeltExam.csproj",
       "packagesPath": "/Users/brent/.nuget/packages/",
-      "outputPath": "/Users/brent/Desktop/Coding/c#_stack/ASP.NET_Core/BeltExam/obj/",
+      "outputPath": "/Users/brent/Desktop/Coding/projects/C#_Belt/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

@@ -1,6 +1,6 @@
 @model Event;
 
-<nav class="navbar navbar-expand-lg navbar-light bg-white row">
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-white row">
     <div class="navbar-brand text-secondary col-xs-3" style="font-size: 1.4rem"><strong>Dojo Activity Center</strong></div>
 
     <div class="col-xs-2 offset-1">
@@ -10,15 +10,15 @@
     <div class="col-xs-2 offset-1">
         <a href="/logout">Logout</a>
     </div>
-</nav>
+</nav> -->
 
+<div class="Event-banner col-10">
 
-<div class="jumbotron text-center">
-    <h1 class="display-4">@Model.Title</h1>
+    <h1 class="Event-title">@Model.Title</h1>
 
     @if (Model.UserId == ViewBag.thisUser.UserId)
     {
-        <a href="/event/@Model.EventId/delete" class="btn btn-danger">Delete</a>
+        <div class="text-center"><a href="/event/@Model.EventId/delete" class="Shadow-btn btn btn-danger">Delete!</a></div>
     }
     else
     {
@@ -32,49 +32,53 @@
         }
         @if (isJoining)
         {
-            <a href="/event/@Model.EventId/leave" class="btn btn-danger">Leave</a>
+            <div class="text-center"><a href="/event/@Model.EventId/leave" class="Shadow-btn btn btn-success">Leave!</a></div>
 
         }
         else
         {
-            <a href="/event/@Model.EventId/join" class="btn btn-success">Join</a>
+            <div class="text-center"><a href="/event/@Model.EventId/join" class="Shadow-btn btn btn-primary">Join!</a></div>
         }
     }
-
 </div>
 
+<div class="Event-info card col-6">
+    <div class="card-body">
+        <div class="card-title">
+            <h1>Event Coordinator:</h1> 
+        </div>
+        <div class="card-text">
+            <p>@ViewBag.Coordinator.FirstName @ViewBag.Coordinator.LastName</p>
+        </div>
 
+        <div class="card-title">
+            <h1>Description:</h1>
+        </div>
+        <div class="card-text">
+            <p>@Model.Description</p>
+        </div>
 
-
-
-
-
-
-
-<div class="col-8 mx-auto">
-
-    <h1>Event Coordinator: <span class="text-primary">@ViewBag.Coordinator.FirstName @ViewBag.Coordinator.LastName</span></h1><br>
-
-    <h1>Description:</h1>
-    <p class="ml-3">@Model.Description</p>
-
-    <h1>Participants:</h1>
-    <ul>
-    @if (Model.AttendeeCount == 0){
-        <li class="list-group-item">No users have RSVPed yet!</li>
-    } else{
-        @foreach (RSVP rsvp in Model.Attendees){
-            @if (rsvp.User.UserId == ViewBag.Coordinator.UserId){
-                continue;
-            } 
-            else
-            {
-                <li class="list-group-item">@rsvp.User.FirstName @rsvp.User.LastName</li>
+        <div class="card-title">
+            <h1>Participants:</h1>
+        </div>
+        <div class="card-text">
+            <ul>
+            @if (Model.AttendeeCount == 1){
+                <p>No users have RSVPed yet!</p>
+            } else{
+                @foreach (RSVP rsvp in Model.Attendees){
+                    @if (rsvp.User.UserId == ViewBag.Coordinator.UserId){
+                        continue;
+                    } 
+                    else
+                    {
+                        <p>@rsvp.User.FirstName @rsvp.User.LastName</p>
+                    }
+                }
             }
-        }
-    }
-    </ul>
-    
+            </ul>
+        </div>
+    </div>
 </div>
 
 

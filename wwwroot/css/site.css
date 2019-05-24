@@ -1,16 +1,237 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
-for details on configuring this project to bundle and minify static web assets. */
-body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿*{
+    padding: 0;
+    margin: 0;
+    border: 0;
 }
 
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+.Crimson-text{
+    font-family: 'Crimson Text', serif;
 }
+
+.Container{
+    padding: 2rem 8rem 4rem;
+    background-image: url('../images/willian-justen-de-vasconcellos-454173-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 720px; 
+}
+
+.Menu{
+    color: black;
+    background-color: rgb(135, 206, 250);
+}
+.Logo{
+    font: 2rem 'Francois One', sans-serif;
+}
+
+.Login-reg{
+    padding: 0 2rem;
+}
+
+
+
+.Welcome-text{
+    font: 7rem 'Abril Fatface', cursive;
+    text-align: center;
+    color: #fefefe;
+    margin-top: -20px;
+    /* background: rgba(135, 206, 250, .6);
+    box-shadow: 5px 5px 10px black;
+    padding: 1rem 2rem;
+    border: 3px solid #fefefe; */
+}
+
+.Home-table{
+    margin: 4rem 0;
+    font-size: 1.2rem;
+    background: rgba(135, 206, 250, .6);
+    box-shadow: 5px 5px 10px black;
+    color: #fefefe;
+    border: 3px solid #fefefe;
+}
+    .Home-table a{
+        /* color: rgb(212,175,55); */
+        color: #FFC109;
+        font-weight: 900;
+    }
+
+    .Home-action-del{
+        background-color: red;
+        color: #fefefe;
+        border: 2px solid #fefefe;
+        box-shadow: 5px 5px 10px black;
+        font-weight: 900;
+    }
+    .Home-action-join{
+        background-color: #0069D8;
+        color: #fefefe;
+        border: 2px solid #fefefe;
+        box-shadow: 5px 5px 10px black;
+        font-weight: 900;
+    }
+    .Home-action-leave{
+        background-color: green;
+        color: #fefefe;
+        border: 2px solid #fefefe;
+        box-shadow: 5px 5px 10px black;
+        font-weight: 900;
+    }
+
+.Home-add-btn{
+    width: 75%;
+    font-size: 2rem;
+    border: 3px solid #fefefe;
+    box-shadow: 5px 5px 10px black;
+}
+
+
+.Shadow-btn{
+    box-shadow: 5px 5px 10px black;
+    border: 4px solid #fefefe;
+    color: #fefefe;
+    font-size: 2rem;
+    width: 75%;
+}
+
+.Shadow.card{
+    background: rgba(135, 206, 250, .6);
+    box-shadow: 5px 5px 10px black;
+    padding: 1rem 2rem;
+    border: 3px solid #fefefe;
+    color: #fefefe;
+}
+
+.Event-banner{
+    margin: 1rem auto;
+    padding: 2rem;
+    background: rgba(135, 206, 250, .6);
+    color: white;
+    border: 2px solid #fefefe;
+    text-align: center;
+}
+    .Event-title{
+        font-size: 5rem;
+    }
+
+.Event-info{
+    margin: 2rem auto;
+    background: rgba(135, 206, 250, 0.6);
+    border: 2px solid #fefefe;
+    color: #fefefe;
+    text-align: center;
+}
+
+    .card-text{
+        font-size: 1.4rem;
+    }
+
+.Add-title{
+    font: 7rem 'Abril Fatface', cursive;
+    margin-top: -20px;
+    text-align: center;
+    color: #fefefe;
+}
+.Add-form{
+    background: rgba(135, 206, 250, .4);
+    box-shadow: 5px 5px 10px black;
+    border: 3px solid #fefefe;
+    margin: -1.2rem auto 0;
+    color: #fefefe;
+    font-size: 2rem;
+    padding: 0 4rem 5rem;
+}
+    .Event-form .form-group:first-child{
+        margin-top: 0;
+    }
+    .Event-form .form-group{
+        margin-top: -1rem;
+    }
+.Add-form-btn{
+    box-shadow: 5px 5px 10px black;
+    width: 75%;
+    margin-top: 2rem;
+}
+
+.dropbtn {
+    background-color: inherit;
+    font-size: 1.5rem;
+    border: none;
+    margin-right: 4rem;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(100, 206, 250);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {background-color: goldenrod;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: rgb(100, 206, 250);}
+
+#Fade{
+    -webkit-animation: fadein 0.5s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 0.5s; /* Firefox < 16 */
+        -ms-animation: fadein 0.5s; /* Internet Explorer */
+         -o-animation: fadein 0.5s; /* Opera < 12.1 */
+            animation: fadein 0.5s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+
+
+
+
+
+
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
+for details on configuring this project to bundle and minify static web assets. */
+body {
+    padding: 0;
+}
+
 
 /* Carousel */
 .carousel-caption p {
