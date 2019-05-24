@@ -3,31 +3,30 @@
 <form asp-action="RegisterProcess" asp-controller="Home" method="POST">
 
     <div class="form-group">
-        <span asp-validation-for="FirstName" class="text-danger"></span><br>
+        <span asp-validation-for="FirstName" class="text-danger font-weight-bold"></span><br>
         <label asp-for="FirstName"></label>
         <input asp-for="FirstName" class="form-control form-control-lg">
     </div>
     <div class="form-group">
-        <span asp-validation-for="LastName" class="text-danger"></span><br>
+        <span asp-validation-for="LastName" class="text-danger font-weight-bold"></span><br>
         <label asp-for="LastName"></label>
         <input asp-for="LastName" class="form-control form-control-lg">
     </div>
     <div class="form-group">
-        <span asp-validation-for="Email" class="text-danger"></span><br>
+        <span asp-validation-for="Email" class="text-danger font-weight-bold"></span><br>
         <label asp-for="Email"></label>
         <input asp-for="Email" class="form-control form-control-lg">
     </div>
     <div class="form-group">
-        <span asp-validation-for="Password" class="text-danger"></span><br>
-        <label asp-for="Password"></label>
+        <span asp-validation-for="Password" class="text-danger font-weight-bold"></span><br>
+        <label asp-for="Password">Password (must be at least 8 characters and contain both a number and a special character)</label>
         <input asp-for="Password" class="form-control form-control-lg">
     </div>
     <div class="form-group">
-        <span asp-validation-for="ConfirmPW" class="text-danger"></span><br>
+        <span asp-validation-for="ConfirmPW" class="text-danger font-weight-bold"></span><br>
         <label asp-for="ConfirmPW"></label>
         <input asp-for="ConfirmPW" class="form-control form-control-lg"><br>
     </div>
-
     <div class="text-center"><input type="submit" value="Sign up now!" class="btn btn-warning w-75" style="font-size:2rem"></div>
 
 </form>

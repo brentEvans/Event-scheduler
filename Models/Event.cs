@@ -15,7 +15,6 @@ namespace BeltExam.Models
         public string Title {get;set;}
 
         [Required]
-        // validate that DateTime is in the future
         [DataType(DataType.Date)]
         public DateTime Date {get;set;}
 
@@ -38,7 +37,6 @@ namespace BeltExam.Models
             }
         }
 
-
         [Required]
         [NotMapped]
         public int Duration {get;set;}
@@ -46,7 +44,6 @@ namespace BeltExam.Models
         [Required]
         [NotMapped]
         public string DurationUnits {get;set;}
-
 
         [Required]
         [MinLength(10, ErrorMessage="Description must be at least 10 characters!")]
@@ -73,4 +70,3 @@ namespace BeltExam.Models
         public DateTime Updated_At {get;set;} = DateTime.Now;
     }
 }
-

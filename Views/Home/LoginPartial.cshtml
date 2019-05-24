@@ -1,7 +1,6 @@
 
 @model LoginUser
 
-
 <form asp-action="LoginProcess" asp-controller="Home" method="POST">
     <div class="form-group">
         <span asp-validation-for="Email" class="text-danger"></span><br>
@@ -14,6 +13,4 @@
         <input asp-for="Password" class="form-control form-control-lg">
     </div>
     <div class="text-center"><input type="submit" value="Login Now!" class="btn btn-warning w-75" style="font-size:2rem"></div>
-
 </form>
-

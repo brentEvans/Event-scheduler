@@ -42,16 +42,3 @@ namespace BeltExam
         }
     }
 }
-
-
-/*
-
-    TO DO:
-
-        * add additional DbSets to BeltExamContext.cs
-
-        * finish setting up db models
-
- */
-
-

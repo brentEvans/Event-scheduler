@@ -48,7 +48,3 @@ namespace BeltExam.Models
         public DateTime Updated_At {get;set;} = DateTime.Now;
     }
 }
-
-
-
-

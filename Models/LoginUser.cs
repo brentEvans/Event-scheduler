@@ -14,4 +14,3 @@ namespace BeltExam.Models
         public string Password {get;set;}
     }
 }
-

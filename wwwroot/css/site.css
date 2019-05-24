@@ -29,17 +29,11 @@
     padding: 0 2rem;
 }
 
-
-
 .Welcome-text{
     font: 7rem 'Abril Fatface', cursive;
     text-align: center;
     color: #fefefe;
     margin-top: -20px;
-    /* background: rgba(135, 206, 250, .6);
-    box-shadow: 5px 5px 10px black;
-    padding: 1rem 2rem;
-    border: 3px solid #fefefe; */
 }
 
 .Home-table{
@@ -51,7 +45,6 @@
     border: 3px solid #fefefe;
 }
     .Home-table a{
-        /* color: rgb(212,175,55); */
         color: #FFC109;
         font-weight: 900;
     }
@@ -84,7 +77,6 @@
     border: 3px solid #fefefe;
     box-shadow: 5px 5px 10px black;
 }
-
 
 .Shadow-btn{
     box-shadow: 5px 5px 10px black;
@@ -121,7 +113,6 @@
     color: #fefefe;
     text-align: center;
 }
-
     .card-text{
         font-size: 1.4rem;
     }
@@ -220,18 +211,11 @@
     to   { opacity: 1; }
 }
 
-
-
-
-
-
-
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
 for details on configuring this project to bundle and minify static web assets. */
 body {
     padding: 0;
 }
-
 
 /* Carousel */
 .carousel-caption p {
